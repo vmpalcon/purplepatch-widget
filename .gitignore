@@ -1,0 +1,17 @@
+# Ignore PHPStorm and other IDEs configurations
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+
+# Ignore build and temporary files
+node_modules/
+bower_components/
+vendor/
+*.log
+*.tmp
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
