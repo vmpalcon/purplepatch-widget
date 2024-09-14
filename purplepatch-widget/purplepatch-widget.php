@@ -11,6 +11,7 @@ License: GPL2
 // Include necessary files
 require_once plugin_dir_path(__FILE__) . 'includes/class-admin-menu.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-image-optimizer.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-otherfeature.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-settings.php';
 
 // Initialize the plugin
@@ -19,6 +20,7 @@ function ppw_init()
     $admin_menu = new PPW_Admin_Menu();
     $image_optimizer = new PPW_Image_Optimizer();
     $settings = new PPW_Settings();
+    $otherfeature = new PPW_Other_Feature();
 }
 add_action('plugins_loaded', 'ppw_init');
 
