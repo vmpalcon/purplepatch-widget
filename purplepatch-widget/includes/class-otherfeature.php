@@ -8,11 +8,7 @@ class PPW_Other_Feature
 
         // Register the security settings
         add_action('admin_init', array($this, 'csp_register_settings'));
-
-        // Apply the security headers on sending headers
         add_action('send_headers', array($this, 'add_security_headers'));
-
-        // Handle form submission for security settings
         add_action('admin_post_save_security_settings', array($this, 'save_security_settings'));
     }
 

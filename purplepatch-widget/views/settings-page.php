@@ -247,96 +247,96 @@
             <p>To display social media icons on the frontend of your site, you can use the following code in your theme's
                 template files (e.g., <code>header.php</code>, <code>footer.php</code>):</p>
             <pre class='code code-html'>
-                                <label>PHP</label>
-                                <code>
-                                &lt;ul class="social"&gt;
-                                    &lt;?php if (get_option('pps_linkedin_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_linkedin_url')); ?&gt;" target="_blank" aria-label="LinkedIn" rel="noopener"&gt;
-                                                &lt;i class="fab fa-linkedin-in"&gt;&lt;/i&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
+                                    <label>PHP</label>
+                                    <code>
+                                    &lt;ul class="social"&gt;
+                                        &lt;?php if (get_option('pps_linkedin_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_linkedin_url')); ?&gt;" target="_blank" aria-label="LinkedIn" rel="noopener"&gt;
+                                                    &lt;i class="fab fa-linkedin-in"&gt;&lt;/i&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
 
-                                    &lt;?php if (get_option('pps_twitter_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_twitter_url')); ?&gt;" target="_blank" aria-label="Twitter" rel="noopener"&gt;
-                                                &lt;svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-                                                    &lt;path d="M12.1794 1.5H14.3887L9.56324 7.00625L15.2399 14.5H10.7962L7.31324 9.95625L3.33271 14.5H1.12026L6.28056 8.60938L0.838623 1.5H5.39495L8.53994 5.65312L12.1794 1.5ZM11.4033 13.1812H12.6269L4.7284 2.75H3.41408L11.4033 13.1812Z" fill="currentColor"&gt;&lt;/path&gt;
-                                                &lt;/svg&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
+                                        &lt;?php if (get_option('pps_twitter_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_twitter_url')); ?&gt;" target="_blank" aria-label="Twitter" rel="noopener"&gt;
+                                                    &lt;svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                                        &lt;path d="M12.1794 1.5H14.3887L9.56324 7.00625L15.2399 14.5H10.7962L7.31324 9.95625L3.33271 14.5H1.12026L6.28056 8.60938L0.838623 1.5H5.39495L8.53994 5.65312L12.1794 1.5ZM11.4033 13.1812H12.6269L4.7284 2.75H3.41408L11.4033 13.1812Z" fill="currentColor"&gt;&lt;/path&gt;
+                                                    &lt;/svg&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
 
-                                    &lt;?php if (get_option('pps_facebook_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_facebook_url')); ?&gt;" target="_blank" aria-label="Facebook" rel="noopener"&gt;
-                                                &lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
+                                        &lt;?php if (get_option('pps_facebook_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_facebook_url')); ?&gt;" target="_blank" aria-label="Facebook" rel="noopener"&gt;
+                                                    &lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
 
-                                    &lt;?php if (get_option('pps_youtube_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_youtube_url')); ?&gt;" target="_blank" aria-label="YouTube" rel="noopener"&gt;
-                                                &lt;i class="fab fa-youtube"&gt;&lt;/i&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
+                                        &lt;?php if (get_option('pps_youtube_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_youtube_url')); ?&gt;" target="_blank" aria-label="YouTube" rel="noopener"&gt;
+                                                    &lt;i class="fab fa-youtube"&gt;&lt;/i&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
 
-                                    &lt;?php if (get_option('pps_tiktok_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_tiktok_url')); ?&gt;" target="_blank" aria-label="TikTok" rel="noopener"&gt;
-                                                &lt;i class="fab fa-tiktok"&gt;&lt;/i&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
+                                        &lt;?php if (get_option('pps_tiktok_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_tiktok_url')); ?&gt;" target="_blank" aria-label="TikTok" rel="noopener"&gt;
+                                                    &lt;i class="fab fa-tiktok"&gt;&lt;/i&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
 
-                                    &lt;?php if (get_option('pps_instagram_url')) : ?&gt;
-                                        &lt;li&gt;
-                                            &lt;a href="&lt;?php echo esc_url(get_option('pps_instagram_url')); ?&gt;" target="_blank" aria-label="Instagram" rel="noopener"&gt;
-                                                &lt;i class="fab fa-instagram"&gt;&lt;/i&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;?php endif; ?&gt;
-                                &lt;/ul&gt;
-                                </code>
-                                </pre>
+                                        &lt;?php if (get_option('pps_instagram_url')) : ?&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="&lt;?php echo esc_url(get_option('pps_instagram_url')); ?&gt;" target="_blank" aria-label="Instagram" rel="noopener"&gt;
+                                                    &lt;i class="fab fa-instagram"&gt;&lt;/i&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;?php endif; ?&gt;
+                                    &lt;/ul&gt;
+                                    </code>
+                                    </pre>
 
             <p>Make sure to include the necessary CSS to style the icons as follows:</p>
 
             <pre class='code code-css'>
-                                <label>CSS</label>
-                                <code>
-                                ul.social {
-                                    margin: 0;
-                                    padding: 0;
-                                    list-style: none;
-                                    text-align: right;
-                                    white-space: nowrap;
-                                }
-                                ul.social li {
-                                    padding: 0;
-                                    margin-right: 5px;
-                                    margin-top: 4px;
-                                    display: inline-block;
-                                }
-                                ul.social li a {
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    display: inline-block;
-                                    padding: 7px;
-                                    transition: all 0.3s;
-                                }
-                                ul.social li a:hover {
-                                    border-color: #999;
-                                    background-color: #f1f1f1;
-                                }
-                                ul.social li a i {
-                                    font-size: 14px;
-                                }
-                                </code>
-                                </pre>
+                                    <label>CSS</label>
+                                    <code>
+                                    ul.social {
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                        text-align: right;
+                                        white-space: nowrap;
+                                    }
+                                    ul.social li {
+                                        padding: 0;
+                                        margin-right: 5px;
+                                        margin-top: 4px;
+                                        display: inline-block;
+                                    }
+                                    ul.social li a {
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        display: inline-block;
+                                        padding: 7px;
+                                        transition: all 0.3s;
+                                    }
+                                    ul.social li a:hover {
+                                        border-color: #999;
+                                        background-color: #f1f1f1;
+                                    }
+                                    ul.social li a i {
+                                        font-size: 14px;
+                                    }
+                                    </code>
+                                    </pre>
             <?php
         } elseif (isset($_GET['tab']) && $_GET['tab'] == 'security') {
             ?>
