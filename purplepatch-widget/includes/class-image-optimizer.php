@@ -4,7 +4,7 @@ class PPW_Image_Optimizer
     public function __construct()
     {
         add_action('admin_post_optimize_images', array($this, 'handle_image_optimization'));
-        add_action('admin_post_save_image_optimizer_settings', array($this, 'handle_settings_save'));
+        add_action('admin_post_pps_save_image_optimizer_settings', array($this, 'handle_settings_save'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts_styles'));
 
         // Register the automatic image optimization if enabled
@@ -20,14 +20,22 @@ class PPW_Image_Optimizer
         }
 
         // Verify nonce for security
-        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'save_image_optimizer_settings')) {
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'pps_save_image_optimizer_settings')) {
             wp_die('Security check failed.');
         }
 
         // Save settings
-        update_option('image_optimizer_max_width', sanitize_text_field($_POST['image_optimizer_max_width']));
-        update_option('image_optimizer_max_height', sanitize_text_field($_POST['image_optimizer_max_height']));
-        update_option('image_optimizer_compression_quality', sanitize_text_field($_POST['image_optimizer_compression_quality']));
+        if ( isset( $_POST['image_optimizer_max_width'] ) ) {
+            update_option( 'image_optimizer_max_width', sanitize_text_field( wp_unslash( $_POST['image_optimizer_max_width'] ) ) );
+        }
+        
+        if ( isset( $_POST['image_optimizer_max_height'] ) ) {
+            update_option( 'image_optimizer_max_height', sanitize_text_field( wp_unslash( $_POST['image_optimizer_max_height'] ) ) );
+        }
+        
+        if ( isset( $_POST['image_optimizer_compression_quality'] ) ) {
+            update_option( 'image_optimizer_compression_quality', sanitize_text_field( wp_unslash( $_POST['image_optimizer_compression_quality'] ) ) );
+        }
         update_option('auto_resize_and_optimize', isset($_POST['auto_resize_and_optimize']) ? '1' : '0');
 
         wp_redirect(add_query_arg(array('page' => 'image-optimizer', 'tab' => 'optimization', 'status' => 'updated'), admin_url('admin.php')));
@@ -41,7 +49,7 @@ class PPW_Image_Optimizer
         }
 
         // Verify nonce for security
-        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'optimize_images')) {
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'optimize_images')) {
             wp_die('Security check failed.');
         }
 
@@ -160,9 +168,10 @@ class PPW_Image_Optimizer
         }
 
         // Enqueue admin stylesheet
-        wp_enqueue_style('ppw-admin-style', plugin_dir_url(__FILE__) . 'admin-style.css');
+        wp_enqueue_style('ppw-admin-style', plugin_dir_url(__FILE__) . 'admin-style.css', array(), filemtime(plugin_dir_path(__FILE__) . 'admin-style.css'));
 
         // Enqueue admin script
-        wp_enqueue_script('ppw-admin-script', plugin_dir_url(__FILE__) . 'admin-script.js', array('jquery'), null, true);
+       wp_enqueue_script('ppw-admin-script', plugin_dir_url(__FILE__) . 'admin-script.js', array('jquery'), filemtime(plugin_dir_path(__FILE__) . 'admin-script.js'), true);
+
     }
 }

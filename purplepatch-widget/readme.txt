@@ -1,16 +1,18 @@
 === PurplePatch Widget ===
 Contributors: PurplePatch Services
+Short Description: PurplePatch Widget optimizes images for better performance and provides detailed reports on saved disk space.
 Tags: widget, image optimization, purplepatch
 Requires at least: 5.0
-Tested up to: 6.0
+Tested up to: 6.6
 Requires PHP: 7.0
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-== Description ==
+PurplePatch Widget optimizes images for better performance and provides detailed reports on saved disk space.
 
-PurplePatch Widget is a WordPress plugin that provides functionality for image optimization and other features from Purplepatchservices.
+== Description ==
+PurplePatch Widget is a WordPress plugin that provides functionality for image optimization and other features from PurplePatch Services.
 
 == Features ==
 
